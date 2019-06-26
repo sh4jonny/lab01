@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vmconfig.vm.hostname = "server-01"
     vmconfig.vm.box = "debian/stretch64"
     vmconfig.vm.provider :virtualbox do |vb|
-      vb.gui = true
+#      vb.gui = true
       vb.customize ["modifyvm", :id, "--memory", "4096"]
       vb.customize ["modifyvm", :id, "--cpus", "4"]
       vb.customize ["modifyvm", :id, "--ioapic", "on"]
@@ -53,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vmconfig.vm.hostname = "server-02"
     vmconfig.vm.box = "debian/stretch64"
     vmconfig.vm.provider :virtualbox do |vb|
-      vb.gui = true
+#      vb.gui = true
       vb.customize ["modifyvm", :id, "--memory", "4096"]
       vb.customize ["modifyvm", :id, "--cpus", "4"]
       vb.customize ["modifyvm", :id, "--ioapic", "on"]
