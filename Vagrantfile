@@ -1,13 +1,17 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 VAGRANTFILE_API_VERSION = "2"
-Vagrant.require_version ">= 1.5.0"
+Vagrant.require_version ">= 2.2.0"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_guest = true
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
+
+  unless Vagrant.has_plugin?("vagrant-hostmanager")
+    raise 'plugin vagrant-hostmanager is not installed!'
+  end
 
   if Vagrant.has_plugin?("vagrant-vbguest")
     config.vbguest.auto_update = false
